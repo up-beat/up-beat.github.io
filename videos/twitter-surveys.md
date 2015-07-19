@@ -1,4 +1,3 @@
-
 ---
 layout: video
 title: Twitter User Research Lead on How to Use Surveys to Find Satisfaction
