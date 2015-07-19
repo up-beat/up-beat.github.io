@@ -1,0 +1,21 @@
+---
+layout: page
+title: Videos
+---
+
+<br/>
+<div class="posts">
+  {% for video in site.pages %}
+  {% if video.layout == "video" %}
+  <div class="post">
+    <img src="http://img.youtube.com/vi/{{video.code}}/default.jpg" style="float:left; margin:10px;"/>
+    <h3 class="post-title">
+      <a href="{{ video.url }}">
+        {{ video.title }}
+      </a>
+    </h3>
+    <span style="font-size: 14px;">{{ video.tags }}</span>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>

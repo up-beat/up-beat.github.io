@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<div class="page">
+  <a href="{{page.link}}"><h3 class="page-title">{{ page.title }}</h3></a>
+  <iframe title="{{page.title}}" class="youtube-player" type="text/html"
+width="500" height="281" src="{% if page.medium == "vimeo" %}https://player.vimeo.com/video/{% else %}http://www.youtube.com/embed/{% endif %}{{page.code}}"
+frameborder="0" allowFullScreen></iframe>
+  {{ content }}
+</div>
