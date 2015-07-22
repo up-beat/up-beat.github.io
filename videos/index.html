@@ -7,8 +7,8 @@ title: Videos
 <div class="posts">
   {% for video in site.pages %}
   {% if video.layout == "video" %}
-  <div class="post">
-    <img src="http://img.youtube.com/vi/{{video.code}}/default.jpg" style="float:left; margin:10px;"/>
+  <div class="post" style="border-top:3px solid black; border-bottom:2px solid black; padding: 15px; text-align:center; background-color: #EFEFEF;">
+    <center><img src="http://img.youtube.com/vi/{{video.code}}/hqdefault.jpg" /></center>
     <h3 class="post-title">
       <a href="{{ video.url }}">
         {{ video.title }}
