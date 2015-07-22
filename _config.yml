@@ -5,18 +5,18 @@ permalink:           pretty
 relative_permalinks: true
 
 # Setup
-title:               Elastic Labs
-tagline:             'elasticity'
+title:               UpBeat
+tagline:             'videos'
 description:         'A reserved <a href="http://jekyllrb.com" target="_blank">Jekyll</a> theme that places the utmost gravity on content with a hidden drawer. Made by <a href="https://twitter.com/mdo" target="_blank">@mdo</a>.'
-url:                 http://elasticlabs.github.io
+url:                 http://up-beat.github.io
 baseurl:             ''
 paginate:            5
 
 # About/contact
 author:
-  name:              Goran
-  url:               https://twitter.com/gorank83
-  email:             gorank@
+  name:              UpBeat
+  url:               https://up-beat.github.io
+  email:             up@
 
 # Custom vars
 version:             1.0.0
