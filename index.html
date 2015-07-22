@@ -1,38 +1,21 @@
 ---
-layout: default
-title: Home
+layout: page
+title: Videos
 ---
 
+<br/>
 <div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ site.baseurl }}/{{ post.url }}">
-        {{ post.title }}
+  {% for video in site.pages %}
+  {% if video.layout == "video" %}
+  <div class="post" style="border-top:3px solid black; border-bottom:2px solid black; padding: 15px; text-align:center; background-color: #EFEFEF;">
+    <center><img src="http://img.youtube.com/vi/{{video.code}}/hqdefault.jpg" /></center>
+    <h3 class="post-title">
+      <a href="{{ video.url }}">
+        {{ video.title }}
       </a>
-    </h1>
-
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-
-    {{ post.content }}
+    </h3>
+    <span style="font-size: 14px;">{{ video.tags }}</span>
   </div>
+  {% endif %}
   {% endfor %}
 </div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
-</div>
-
