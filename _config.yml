@@ -20,3 +20,7 @@ author:
 
 # Custom vars
 version:             1.0.0
+
+github:
+  repo:               up-beat/up-beat.github.io
+  branch:             master
