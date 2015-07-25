@@ -113,7 +113,8 @@
     return {
       link: url,
       code: get_query(url)["v"],
-      layout: video
+      layout: video,
+      filename: videos
     }
   }
 
@@ -132,17 +133,23 @@
   }
 
 	if (query_params) {
+    var extra_params = {};
+    var src_title = "";
+    if (query_params['url']) {
+      extra_params = extractInfoFromUrl(query_params['url']);
+      if(extra_params['filename']){
+        src_title += extra_params['filename']+"/";
+      }
+    }
+
 		if (query_params['title']) {
-			src_title = query_params['title'] ;
+			src_title += query_params['title'] ;
 			$('#p_filename').val(src_title) ;
 		}
 
     var src_body="---\n";
     src_body += unrollParams(query_params);
-    if (query_params['url']) {
-      var params = extractInfoFromUrl(query_params['url']);
-      src_body += unrollParams(params);
-    }
+    src_body += unrollParams(params);
     src_body+="tags:\n";
     src_body+="---\n\n";
 
