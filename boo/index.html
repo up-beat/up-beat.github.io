@@ -138,6 +138,10 @@
 
     var src_body="---\n"
     src_body += unrollParams(query_params);
+    if (query_params['url']) {
+      var params = extractInfoFromUrl(query_params['url']);
+      src_body += unrollParams(params);
+    }
     src_body+="---\n\n"
 
 		if (query_params['selection']) {
@@ -148,8 +152,6 @@
 		}
 		if (query_params['url']) {
 			src_body = src_body + ' &mdash;['+src_title+'](' + query_params['url'] + ')\n' ;
-      var params = extractInfoFromUrl(query_params['url']);
-      src_body += unrollParams(params);
 		}
 		$('#p_body').val(src_body) ;
 	}
