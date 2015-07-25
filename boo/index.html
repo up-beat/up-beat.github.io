@@ -112,7 +112,8 @@
   var extractYouTubeInfo = function(url){
     return {
       link: url,
-      code: get_query(url)["v"]
+      code: get_query(url)["v"],
+      layout: video
     }
   }
 
@@ -136,13 +137,14 @@
 			$('#p_filename').val(src_title) ;
 		}
 
-    var src_body="---\n"
+    var src_body="---\n";
     src_body += unrollParams(query_params);
     if (query_params['url']) {
       var params = extractInfoFromUrl(query_params['url']);
       src_body += unrollParams(params);
     }
-    src_body+="---\n\n"
+    src_body+="tags:\n";
+    src_body+="---\n\n";
 
 		if (query_params['selection']) {
 			src_body += '> ' + query_params['selection'] ;
