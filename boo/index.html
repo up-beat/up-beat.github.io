@@ -113,8 +113,8 @@
     return {
       link: url,
       code: get_query(url)["v"],
-      layout: video,
-      filename: videos
+      layout: "video",
+      filepath: "videos"
     }
   }
 
@@ -137,8 +137,8 @@
     var src_title = "";
     if (query_params['url']) {
       extra_params = extractInfoFromUrl(query_params['url']);
-      if(extra_params['filename']){
-        src_title += extra_params['filename']+"/";
+      if(extra_params['filepath']){
+        src_title += extra_params['filepath']+"/";
       }
     }
 
